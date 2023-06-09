@@ -4,6 +4,7 @@
   padding: 0;
   margin: 0;
   list-style:none;
+  list-style-position: outside;
   text-decoration:none;
   font-family: 'Poppins', 'Montserrat', sans-serif;
   color: white;
@@ -12,28 +13,35 @@
 /* Navbar */
 nav .navbar{
   z-index: 1;
+  padding: 20px 0px 0px 20px;
 }
 nav .navbar ul li{
   display: inline-block;
   padding: 10px 20px;
+  cursor: pointer;
+  text-align: center;
+  min-height: 20px;
+  line-height: 20px;
 }
-
 nav .navbar ul .nav-list:hover{
-  background-color: rgb(212, 189, 197);
-  border-radius: 6px;
+  background-color: rgba(212, 189, 197, .1);
+  border-radius: 10px;
   color:rgb(27, 40, 45);
+  transition: opacity 0.3s;
 }
 nav .navbar ul .nav-list:hover a{
   color:rgb(27, 40, 45);
+  transition: opacity 0.3s;
 }
 nav .navbar ul .login{
   background: rgb(27, 40, 45);
-  margin: 8px;
   border-radius: 10px;
+  width: 50px;
 }
 nav .navbar ul .space{
-  padding: 10px 350px;
+  padding: 10px 240px;
 }
+
 
 /* Background */
 section .bgImg{
@@ -73,8 +81,9 @@ section .TypeSlide .card{
   margin-left: 20px;
   cursor: pointer;
 }
-section .TypeSlide .card:hover .lower{
+section .TypeSlide .card:hover .lower img{
   opacity: 0.7;
+  transition: opacity 0.3s;
 }
 section .TypeSlide .card .upper{
   display: flex;
@@ -85,6 +94,26 @@ section .TypeSlide .card .upper img{
   height: 20px;
   padding-left: 10px;
 }
+section .TypeSlide .card .lower{
+  position: relative;
+}
+section .TypeSlide .card .lower a{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: white;
+  font-weight: 900;
+  padding: 10px 20px;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+section .TypeSlide .card .lower:hover a{
+  opacity: 1;
+  transition: opacity 0.3s;
+}
 section .TypeSlide .card .lower img{
   width: 170px;
   border-radius: 5px;
@@ -92,9 +121,30 @@ section .TypeSlide .card .lower img{
 
 /* Trending */
 section .Trending{
-  
   background: linear-gradient(0deg, rgb(156, 151, 183), rgb(23, 33, 24) 100%) ;
   padding: 10px 130px;
+}
+section .Trending .heading{
+  justify-content: space-between;
+  height: 100%;
+  display: flex;
+}
+section .Trending .heading .view{
+  justify-content: flex-end;
+  display: flex;
+}
+section .Trending .heading .button{
+  padding: 6px 10px;
+  margin: 4px;
+  background: rgba(27, 40, 45, .3);
+  border-radius: 10px;
+}
+section .Trending .heading a img{
+  width: 42px;
+  line-height: 42px;
+  height: 42px;
+  cursor: pointer;
+  margin-left: 10px;
 }
 section .Trending h1{
   font-size: 28px;
@@ -109,6 +159,24 @@ section .Trending .cards .card{
   text-align: center;
   margin-left: 20px;
 }
+section .Trending .cards .card .upper{
+  position: relative;
+}
+section .Trending .cards .card .upper a{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: white;
+  font-weight: 900;
+  padding: 10px 20px;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+section .Trending .cards .card .upper:hover a{
+  opacity: 1;
+}
 section .Trending .cards .card .upper img{
   width: 240px;
   border-radius: 6px;
@@ -116,10 +184,10 @@ section .Trending .cards .card .upper img{
 section .Trending .cards .card .lower{
   width: 240px;  
 }
-section .Trending .cards .card:hover{
+section .Trending .cards .card:hover img{
   opacity: 0.7;
   cursor: pointer;
-
+  transition: opacity 0.3s;
 }
 section .Trending .cards {
   overflow-x: auto;
@@ -153,9 +221,7 @@ section .Trending .cards {
 
 /* Tourism thems */
 section .themes{
-  /* background-color: rgba(23, 33, 24, 0.99); */
   background: linear-gradient(0deg, rgb(156, 151, 183), rgb(23, 33, 24) 90%);
-  
   padding: 10px 130px;
 }
 section .themes h1{
@@ -175,7 +241,7 @@ section .themes .cards .card{
   border-radius: 6px;
   cursor: pointer;
 }
-section .themes .cards .card:hover{
+section .themes .cards .card:hover img{
   opacity: .7;
 }
 section .themes .cards .card h3{
@@ -185,12 +251,15 @@ section .themes .cards .card h3{
   color: rgb(23, 33, 24);
 }
 section .themes .cards .card img{
-  width: 100%;
+  width: 65%;
+  padding: 10% 20%;
+  margin-top: -20px;
   height: 100px;
 }
 section .themes .cards .card:hover img{
   height: 105px;
   overflow: hidden;
+  transition: opacity .3s;
 }
 
 /* Overview about India tourism */
@@ -210,7 +279,28 @@ section .overview h2{
 section .overview .img img{
   margin-top: 50px;
   width: 500px;
+  height: 650px;
   border-radius: 6px;
+}
+section .overview .img{
+  position: relative;
+  display: inline-block;
+}
+section .overview.img #myImage{
+  opacity: 1;
+  transition: opacity 0.9s ease-in-out;
+}
+section .overview .img #myText{
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  width: 96%;
+  font-size: 25px;
+  font-weight: 800;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 10px;
+  text-align: center;
 }
 section .overview .description{
   margin-left: 30px;
