@@ -1,103 +1,140 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
 
 *{
-  padding: 0;
-  margin: 0;
+  padding: 0px;
+  margin: 0px;
   list-style:none;
   list-style-position: outside;
   text-decoration:none;
   font-family: 'Poppins', 'Montserrat', sans-serif;
   color: white;
 }
-
 /* Navbar */
-nav .navbar{
-  z-index: 1;
-  padding: 20px 0px 0px 20px;
+section #home nav .navbar{
+  margin: 10px 20px;
 }
-nav .navbar ul li{
-  display: inline-block;
-  padding: 10px 20px;
-  cursor: pointer;
+section #home nav .navbar ul{
+  display: flex;
+  justify-content: flex-end;
+}
+section #home nav .navbar ul .title{
+  justify-content: flex-start;
+  margin-right: auto;
+}
+section #home nav .navbar ul li{
+  float: left;
+  padding: 10px 10px;
   text-align: center;
-  min-height: 20px;
-  line-height: 20px;
+  margin-left: 10px;
+  transition: background-color 0.3s;
+  border-radius: 10px;
 }
-nav .navbar ul .nav-list:hover{
-  background-color: rgba(212, 189, 197, .1);
+section #home nav .navbar ul .subdiv .sub{
+  margin-top: 10px;   
+  left: 50%;
+  transform: translate(-50%, 0%);
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  position: absolute;
+  display: none;
+  background: linear-gradient(15deg,  rgb(219, 212, 212), rgb(156, 151, 183) 80%);
+  border-radius: 10px;
+  min-width:63.5vw;   
+}
+section #home nav .navbar ul #Destination .sub{
+  min-width: 87vw;
+}
+section #home nav .navbar ul .subdiv .sub div{
+  padding: 20px;
+}
+section #home nav .navbar ul .subdiv .sub div h3{
+  padding: 5px;
+}
+section #home nav .navbar ul .subdiv:hover .sub{
+  display: -webkit-box;
+  transition: background-color 0.3s;
+}
+section #home nav .navbar ul .subdiv:hover .sub a{
+  display:block;
+  padding: 2px;
+}
+section #home nav .navbar ul .subdiv .sub a:hover{
+  color: rgb(212, 189, 197);
+  text-shadow: 1px 1px 1px rgb(27, 40, 45);
+}
+section #home nav .navbar ul .nav-list:hover{
+  background-color: rgba(156, 151, 183, .9);
   border-radius: 10px;
   color:rgb(27, 40, 45);
   transition: opacity 0.3s;
 }
-nav .navbar ul .nav-list:hover a{
-  color:rgb(27, 40, 45);
-  transition: opacity 0.3s;
+section #home nav .navbar ul .subdiv:hover{
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
 }
-nav .navbar ul .login{
-  background: rgb(27, 40, 45);
-  border-radius: 10px;
-  width: 50px;
+section #home nav .navbar ul .nav-list:hover a{
+color:rgb(27, 40, 45);
 }
-nav .navbar ul .space{
-  padding: 10px 240px;
+section #home nav .navbar ul .login{
+background: rgb(27, 40, 45);
+border-radius: 10px;
+width: 50px;
 }
 
 
 /* Background */
-section .bgImg{
+section #home{
+  height: 100vh;
   width: 100%;
-  position: absolute;
-  top: 0px;
-  z-index: -10;
+  overflow: hidden;
+  background-image: url("/media/background.jpg");
+  background-size: 100vw 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
 }
-section .container{
-  padding: 0%;
-  margin: 0%;
+section #home .container{
+margin: 7% 0 3% 8%;
 }
-section .container pre h1{
-  font-size: 45px;
-  padding: 0%;
-  margin: 0%;
+section #home .container h1{
+font-size: 7vh;
 }
-section .container pre h2{
-  font-size: 18px;
-  padding: 0%;
+section #home .container h2{
+font-size: 3vh;
 }
-section .container pre a{
-  background: rgb(156, 151, 183);
-  color: rgb(27, 40, 45);
-  margin: 27px;
-  padding: 10px 40px;
-  border-radius: 10px;
-  pointer-events: none;
-}
+section #home .container a{
+background: rgb(156, 151, 183);
+color: rgb(27, 40, 45);
+padding: 10px;
+border-radius: 10px;
+pointer-events: none;
 
-/* Tour Type */
-section .TypeSlide{ 
-  display: flex;
-  padding: 20px 110px;
 }
-section .TypeSlide .card{
+section #home .TypeSlide{ 
+  display: flex;
+  padding: 20px 6.5%;
+}
+section #home .TypeSlide .card{
   margin-left: 20px;
   cursor: pointer;
 }
-section .TypeSlide .card:hover .lower img{
+section #home .TypeSlide .card:hover .lower img{
   opacity: 0.7;
   transition: opacity 0.3s;
 }
-section .TypeSlide .card .upper{
+section #home .TypeSlide .card .upper{
   display: flex;
   line-height: 25px;
   height: 25px;
 }
-section .TypeSlide .card .upper img{
+section #home .TypeSlide .card .upper img{
   height: 20px;
   padding-left: 10px;
 }
-section .TypeSlide .card .lower{
+section #home .TypeSlide .card .lower{
   position: relative;
 }
-section .TypeSlide .card .lower a{
+section #home .TypeSlide .card .lower a{
   position: absolute;
   top: 50%;
   left: 50%;
@@ -110,11 +147,11 @@ section .TypeSlide .card .lower a{
   text-align: center;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
-section .TypeSlide .card .lower:hover a{
+section #home .TypeSlide .card .lower:hover a{
   opacity: 1;
   transition: opacity 0.3s;
 }
-section .TypeSlide .card .lower img{
+section #home .TypeSlide .card .lower img{
   width: 170px;
   border-radius: 5px;
 }
@@ -155,7 +192,6 @@ section .Trending .cards{
 }
 section .Trending .cards .card{
   width: 240px;
-  height: 200px; 
   text-align: center;
   margin-left: 20px;
 }
@@ -221,13 +257,12 @@ section .Trending .cards {
 
 /* Tourism thems */
 section .themes{
-  background: linear-gradient(0deg, rgb(156, 151, 183), rgb(23, 33, 24) 90%);
+  background: rgb(156, 151, 183);
   padding: 10px 130px;
 }
 section .themes h1{
   font-size: 28px;
   font-weight: 500;
-  color:rgb(212, 189, 197);
 }
 section .themes .cards{
   display:flex;
@@ -264,7 +299,7 @@ section .themes .cards .card:hover img{
 
 /* Overview about India tourism */
 section .overview{
-  background: linear-gradient(0deg,  rgb(23, 33, 24), rgb(156, 151, 183) 100%);
+  background-color: rgb(156, 151, 183);
   padding: 80px 130px;
   display: flex;
 }
@@ -280,7 +315,7 @@ section .overview .img img{
   margin-top: 50px;
   width: 500px;
   height: 650px;
-  border-radius: 6px;
+  border-radius: 10px;
 }
 section .overview .img{
   position: relative;
@@ -310,6 +345,44 @@ section .overview .description .text{
 }
 
 
+/* Choose us */
+section .choose{
+  padding: 30px 130px;
+  background: linear-gradient(0deg,  rgb(23, 33, 24), rgb(156, 151, 183) 100%);
+  .feat{
+    display: flex;
+    margin-top: 10px;
+    background-color: rgba(156, 151, 183, .7);
+    color: black;
+    padding: 15px;
+    border-radius: 10px;
+  }
+}
+section .choose h1{
+  font-size: 35px;
+  color: rgb(23, 33, 24);
+  ;
+}
+section .choose .feat .feat-item{
+  padding: 10px;
+  text-align: justify;
+}
+section .choose .feat .feat-item .head{
+  display: flex;
+  line-height: 30px;
+  height: 30px;
+  margin-bottom: 5px;
+}
+section .choose .feat .feat-item .head h3{
+  color: black;
+  text-decoration: underline;
+}
+section .choose .feat .head img{
+  width: 30px;
+  height: 30px;
+}
+
+
 /* footer */
 footer .container{
   display: flex;
@@ -336,11 +409,105 @@ footer .container .social ul li{
   margin-left: 20px;
 }
 footer .container .social img{
-  /* background-color: white; */
   width: 30px;
 }
 footer .rights{
   background-color: rgb(23, 33, 24);
   padding: 10px;
   text-align: center;
+}
+
+
+/* Packages css */
+/* Info */
+section #home .top{
+  display: flex;
+}
+section #home .top .Info{
+  padding: 70px 0px 0px 100px;
+  width: 700px;
+}
+section #home .top .Info h1{
+  font-size: 45px;
+}
+section #home .top .Info p{
+  text-align: justify;
+  padding: 5px 0px;
+}
+section #home .top .Info a{
+  color: gray;
+}
+
+
+/* OverView and Enquiry Form */
+section #info{
+  display: flex;
+  padding: 20px 120px;
+  padding-bottom: 80px;
+  background: linear-gradient(0deg,  rgb(23, 33, 24), rgb(156, 151, 183) 40%);
+}
+
+section #info .over-view{
+  width:55%;
+  padding-right: 40px;
+}
+section #info .over-view h1{
+  color: rgb(23, 33, 24);
+  font-size: 28px;
+}
+section #info .over-view p{
+  text-align: justify;
+}
+section #info .form{
+  border-radius: 10px;
+  background-color: rgba(156, 151, 183, .8);
+  padding: 20px 35px;
+  width: 35%;
+  .img{
+      width: 70px;
+      margin: 5px auto;
+  }
+  .head{
+      width: 100%;
+  }
+  .img img{
+      width: 100%;
+  }
+}
+section #info .form .head h1{
+  text-align: center;
+  font-size: 32px;
+  color:rgb(23, 33, 24);
+}  
+section #info .form form{
+  width: 100%;
+  margin: 28px;
+  .button{
+  background: rgb(156, 151, 183);
+  cursor: pointer;
+  margin: 10px;
+  }
+  .button:hover{
+      background-color: rgba(156, 151, 183, .8);
+  }
+  .area{
+      height: 80px;
+      padding: 5px 10px;
+  }
+}
+section #info .form form input, button, textarea{
+  width: 300px;
+  height: 35px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: 2px solid rgb(23, 33, 24);
+  color: rgb(23, 33, 24);
+  padding: 0px 10px;
+}
+section #info .form form .inline{
+  display: flex;
+  .sub{
+      width: 130px;
+      margin-right: 20px;
+  }
 }
